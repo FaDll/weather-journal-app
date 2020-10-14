@@ -4,7 +4,7 @@
 let d = new Date();
 let newDate = d.getMonth()+1 +'.'+ d.getDate()+'.'+ d.getFullYear();
 
-let baseURL='http://api.openweathermap.org/data/2.5/weather?zip=';//api.openweathermap.org/data/2.5/weather?zip={zip code},{country code}&appid={API key}
+let baseURL='http://api.openweathermap.org/data/2.5/weather?zip=';
 let ApiKey='efb19710cfa48fd6e0b7d90ae5b99191';
 
 //click event listener to add function to the generate button.
