@@ -35,21 +35,21 @@ function listening()
 
 app.get('/all',SendData);
 
-function SendData(request,response)
+function SendData(req,res)
 {
-    response.send(projectData);
+    res.send(projectData);
 }
 
 app.post('/add',AddData);
 
 function AddData(req,res)
 {
-    NewEntry={
+    NewData={
         date: req.body.date,
         temp: req.body.temp,
         content:req.body.content
     }
-    projectData.push(NewEntry);
+    projectData.push(NewData);
     console.log(projectData);
 
 }

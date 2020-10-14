@@ -16,7 +16,6 @@ function Generate(event)
     const feelings=document.getElementById('feelings').value;
     //get the weather here.
     GetWeatherData(baseURL,ZipCode,ApiKey).then(function(data){
-        console.log("hhh");
         postData(' /add',{date:newDate, temp:data.main.temp, content:feelings})
         UpdateUI();
 
@@ -36,7 +35,6 @@ const GetWeatherData = async(baseURL, ZipCode, ApiKey)=>{
 
 const postData = async(url = '', data = {})=>{
     console.log(data);
-    console.log("akjlsdhfkjlasdh");
     const response= await fetch(url,{
         method:'POST',
         credentials:'same-origin',
@@ -59,9 +57,9 @@ const UpdateUI= async() => {
     const request= await fetch('/all');
     try{
         const Data= await request.json();
-        document.getElementById('date:').innerHTML=`Date: ${Data[0].date}`;
-        document.getElementById('temp:').innerHTML=`Temprature: ${Data[0].temp}`;
-        document.getElementById('content:').innerHTML=`I feel: ${Data[0].content}`;
+        document.getElementById('date').innerHTML=`Date: ${Data[0].date}`;
+        document.getElementById('temp').innerHTML=`Temprature: ${Data[0].temp}`;
+        document.getElementById('content').innerHTML=`I feel: ${Data[0].content}`;
 
     }catch(error)
     {
